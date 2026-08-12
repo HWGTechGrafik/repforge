@@ -14,10 +14,28 @@
   <meta name="theme-color" content="#18AA4C">
 
   <!--
+    Der Streifen hinter Uhr und Akku gehoert NICHT zur Flutter-Flaeche: Auf
+    dem iPhone liegt die Statusleiste ausserhalb des Ansichtsfensters, und
+    iOS fuellt sie mit der Hintergrundfarbe der SEITE. Ohne diese Regeln
+    bleibt dort das Weiss des Browsers stehen, waehrend darunter die dunkle
+    App beginnt - eine weisse Kante ueber der Ueberschrift.
+
+    Die zwei Farben sind der Grundton aus lib/ui/gestaltung.dart und muessen
+    mit "helleGestaltung" und "dunkleGestaltung" gleich bleiben. Sie greifen
+    beim Laden und bei der Systemeinstellung; sobald die App laeuft, setzt
+    sie die Farbe passend zur eigenen Wahl nach (lib/logic/seitenfarbe.dart).
+  -->
+  <style>
+    html, body { margin: 0; padding: 0; background-color: #F1F4F1; }
+    @media (prefers-color-scheme: dark) {
+      html, body { background-color: #0C0F0D; }
+    }
+  </style>
+
+  <!--
     iPhone: Diese Angaben entscheiden, wie die App aussieht, wenn sie ueber
     "Zum Home-Bildschirm" installiert wird - der Titel steht dann unter dem
-    Symbol. Die Statusleiste bleibt durchscheinend, damit der eigene
-    Hintergrund bis unter die Uhr laeuft.
+    Symbol.
   -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
