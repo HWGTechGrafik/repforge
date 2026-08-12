@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <!--
-    Wird beim Bauen durch --base-href ersetzt (im Deploy-Skript "/RepForge/").
+    Wird beim Bauen durch --base-href ersetzt (im Deploy-Skript "/repforge/").
     Muss mit Schraegstrich beginnen und enden, sonst laedt auf GitHub Pages
     keine einzige Datei.
   -->
@@ -25,6 +25,16 @@
   <meta name="apple-mobile-web-app-title" content="RepForge">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+  <!--
+    Ein Symbol fuer alle Faelle, bewusst ohne Umschaltung nach Hell/Dunkel.
+    Die Kachel bringt ihren dunklen Grund selbst mit - genau wie das Symbol
+    am Home-Bildschirm und das Logo im Sperr-Bildschirm. Ein Tab-Symbol, das
+    je nach Systemmodus anders aussieht, waere die einzige Stelle, an der die
+    Marke wechselt.
+
+    Am Home-Bildschirm ginge eine Umschaltung ohnehin nicht: Das Symbol wird
+    beim Hinzufuegen einmal eingebacken und danach nie wieder nachgeladen.
+  -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>RepForge</title>
