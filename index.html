@@ -59,6 +59,16 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <!--
+    Windows-App (RepForge.exe, WebView2-Huelle): Sie zeigt ihren
+    Startbildschirm, bis Flutter das erste Bild gezeichnet hat. Im Browser
+    gibt es window.chrome.webview nicht - dort passiert hier nichts.
+  -->
+  <script>
+    window.addEventListener("flutter-first-frame", function () {
+      if (window.chrome && window.chrome.webview) window.chrome.webview.postMessage({ typ: "bereit" });
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
